@@ -140,7 +140,7 @@
 http://docs.toast.com/ko/Download/ > [Download]에서 [Monitoring Agent] 파일을 다운로드 받습니다.
 
 ```
-[root@host-192-168-0-7 ~]# http://static.toastoven.net/toastcloud/sdk_download/monitor/tcc/agent-centos-0.0.2.tgz
+[root@host-192-168-0-7 ~]# wget http://static.toastoven.net/toastcloud/sdk_download/monitor/tcc/agent-centos-0.0.2.tgz
 --2014-09-17 11:35:31--  http://static.toastoven.net/toastcloud/sdk_download/monitor/tcc/agent-centos-0.0.2.tgz
 Connecting to http://static.toastoven.net... connected.
 HTTP request sent, awaiting response... 200 OK
