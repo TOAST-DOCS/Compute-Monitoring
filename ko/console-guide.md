@@ -137,20 +137,20 @@
 
 ### 에이전트 다운로드
 
-http://cloud.toast.com> [DOCUMENTS] > [Download]에서 [Monitoring Agent] 파일을 다운로드 받습니다.
+http://docs.toast.com/ko/Download/ > [Download]에서 [Monitoring Agent] 파일을 다운로드 받습니다.
 
 ```
-[root@host-192-168-0-7 ~]# wget http://static.toastoven.net/toastcloud/sdk_download/monitor/agent-0.0.2.tgz
---2014-09-17 11:35:31--  http://static.toastoven.net/toastcloud/sdk_download/monitor/agent-0.0.2.tgz
+[root@host-192-168-0-7 ~]# wget http://static.toastoven.net/toastcloud/sdk_download/monitor/tcc/agent-centos-0.0.2.tgz
+--2014-09-17 11:35:31--  http://static.toastoven.net/toastcloud/sdk_download/monitor/tcc/agent-centos-0.0.2.tgz
 Connecting to http://static.toastoven.net... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 168329 (164K) [application/x-gzip]
-Saving to: “agent-0.0.2.tgz”
+Saving to: “agent-centos-0.0.2.tgz”
 
 100%[=======================================================>]
 168,329     --.-K/s   in 0.005s
 
-2014-09-17 11:35:31 (35.6 MB/s) - “agent-0.0.2.tgz” saved [168329/168329]
+2014-09-17 11:35:31 (35.6 MB/s) - “agent-centos-0.0.2.tgz” saved [168329/168329]
 ```
 
 ### 에이전트 설치
@@ -158,7 +158,7 @@ Saving to: “agent-0.0.2.tgz”
 모니터링 에이전트는 반드시 root 권한으로 설치해야 합니다. 설치는 다운받은 파일의 압축 해제 후, “install.sh”를 실행하면 됩니다.
 
 ```
-[root@host-192-168-0-7 ~]# tar -zxvf agent-0.0.2.tgz
+[root@host-192-168-0-7 ~]# tar -zxvf agent-centos-0.0.2.tgz
 ./agent/
 ./agent/ssl/
 ./agent/ssl/cert.pem
