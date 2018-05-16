@@ -2,70 +2,40 @@
 
 ## 인스턴스 상태 확인
 
-[Infrastructure] > [Compute & Network] > [Monitoring] > [Server Details]탭에서 모니터링할 인스턴스를 추가합니다.
+[Server Details] 탭에서 모니터링할 인스턴스를 선택하여 상태 정보를 확인할 수 있습니다.
+상태 정보의 구간별 평균값을 보거나, 특정 기간 동안 시간에 따른 상태 정보 변화를 그래프로도 확인할 수 있습니다.
+[Server Details] 탭에서 확인 가능한 정보는 다음과 같습니다.
 
-```
-[Infrastructure] > [Compute & Network] > [Monitoring] > [Server Details]탭 클릭
-```
-
-```
-[Server Name]란에 서버 선택
-[Add] 버튼 클릭
-```
+- 서버 이름
+- IP
+- CPU 사용률
+- 메모리 사용률
+- 초당 디스크 사용량 (B/s)
+- 초당 네트워크 전송량 (B/s)
+- 서버 상태
+- 서버 구동시간
 
 ![[그림 1 서버 상세 정보]](http://static.toastoven.net/prod_infrastructure/monitoring/img_101.png)
 <center>[그림 1 서버 상세 정보]</center>
 
-[Server Name]란에서 선택한 서버에 대해서 [Add] 버튼을 누르면 해당 서버의 상세 정보가 하단의 표에 추가 됩니다. 더 이상 확인 하고 싶지 않은 서버는 가장 우측의 [Delete] 버튼을 눌러 삭제할 수 있습니다. 서버 상세 정보에서 확인 가능한 정보는 다음과 같습니다.
-
-- 서버 이름
-- IP
-- CPU 사용량
-- 메모리 사용량
-- 초당 읽은 디스크 바이트
-- 초당 쓴 디스크 바이트
-- 초당 받은 네트워크 바이트
-- 초당 전송한 네트워크 바이트
-- 서버 상태
-- 서버 구동시간
-
-서버 상태 그래프를 보고자 하는 경우에는 [Graph]탭을 선택합니다.
-
-```
-[Infrastructure] > [Compute & Network] > [Monitoring] > [Graph]탭 클릭
-```
-
 ![[그림 2 서버 상태 그래프]](http://static.toastoven.net/prod_infrastructure/monitoring/img_102.jpg)
 <center>[그림 2 서버 상태 그래프]</center>
 
-검색 기간에 따라 그래프에 표현되는 데이터의 주기가 1분/5분/30분/2시간으로 자동 변경됩니다. 더 이상 확인 하고 싶지 않은 서버에 대한 그래프는 [Delete] 버튼을 클릭하여 삭제할 수 있습니다.
+> [정보]
+> 검색 기간을 1시간/1일/1주/1개월로 조정하면 그래프에서 데이터의 간격은 1분/5분/30분/2시간으로 각각 조정됩니다.
+
+<br>
 
 > [주의]  
-> 모니터링 데이터의 보관 주기는 최대 한달 입니다. 따라서 그래프의 기간은 한 달을 넘길 수 없습니다.
-
-## 알람로그 확인
-
-[Infrastructure] > [Compute & Network] > [Monitoring] > [Alarm Logs]탭에서 알람 로그 리스트를 확인 할 수 있습니다.
-
-```
-[Infrastructure] > [Compute & Network] > [Monitoring] > [Alarm Logs]탭 클릭
-```
-
-![[그림 3 알람 로그]](http://static.toastoven.net/prod_infrastructure/monitoring/img_103.png)
-<center>[그림 3 알람 로그]</center>
-
-사용자가 등록한 임계값을 초과하여 발송한 알람 리스트를 확인 할 수 있습니다. 특정 VM에 대한 알람로그를 보고 싶으면 서버 이름 혹은 IP 주소를 입력 후 [검색] 버튼을 클릭합니다.
+> 모니터링 데이터의 보관 주기는 최대 한달 입니다. 한 달 이전의 데이터는 확인할 수 없습니다.
 
 ## 알람 등록
 
-[Infrastructure] > [Compute & Network] > [Monitoring] > [Alarm Setting]탭에서 알람을 등록 할 수 있습니다.
+[Alarm Setting] 탭에서 알람을 등록 할 수 있습니다.
+알람을 등록하여 인스턴스의 상태 정보가 특정 조건을 만족할때, 담당자에게 메일이나 SMS를 통해 알림이 가도록 설정할 수 있습니다.
 
-```
-[Infrastructure] > [Compute & Network] > [Monitoring] > [Alarm Setting]탭 > [Add] 버튼 클릭
-```
-
-![[그림 4 알람 등록]](http://static.toastoven.net/prod_infrastructure/monitoring/img_104.png)
-<center>[그림 4 알람 등록]</center>
+![[그림 3 알람 등록]](http://static.toastoven.net/prod_infrastructure/monitoring/img_104.png)
+<center>[그림 3 알람 등록]</center>
 
 &lt;Add Alarm Setting> 대화창에서 알람등록할 서버를 추가하고 Metric 설정 및 수신자를 지정합니다.
 
@@ -86,45 +56,28 @@
 |Disk Read|	디스크 읽기 사용량을 뜻합니다. 인스턴스에 연결한 각각의 디스크에 대해서 바이트 단위의 절댓값을 입력합니다.|
 |Disk Write|	디스크 쓰기 사용량을 뜻합니다. 인스턴스에 연결한 각각의 디스크에 대해서 바이트 단위의 절댓값을 입력합니다.|
 |Network RX|	받은 네트워크 사용량을 뜻합니다. 인스턴스에 연결한 각각의 이더넷 인터페이스에 대해서 바이트 단위의 절댓값을 입력합니다.|
-|Network TX|	전송한 네트워크 사용량을 뜻합니다. 인스턴스에 연결한 각각의 이더넷 인터페이스에 대해서 바이트 단위의 절댓값을 입력합니다.|
+|Network TX|	보낸 네트워크 사용량을 뜻합니다. 인스턴스에 연결한 각각의 이더넷 인터페이스에 대해서 바이트 단위의 절댓값을 입력합니다.|
 |Server Down|	서버의 상태를 뜻합니다. 여기서 말하는 서버의 상태는 외부와 통신이 가능한 상태를 정상으로 판단합니다. 해당 Metric은 별도의 값을 입력할 필요가 없습니다.|
 
 > [주의]  
 > Serverdown Metric 을 사용하기 위해서는 별도의 Monitoring Agent 를 해당 인스턴스에 설치하여야 하며, 해당 인스턴스는 외부와 통신이 가능한 네트워크에 연결되어 있어야 합니다.
 
-```
-[Server Name]란에 서버 선택
-[Add] 버튼 클릭
-[+ Add alarm metric] 클릭
-[계랑]란에 설정할 Metric 선택
-[임계값]란에 조건 선택 및 값 지정
-알람 수신자 설정을 위하여 [Receiver]란에 [Edit] 버튼 클릭
-```
+![[그림 4 알람 등록 설정]](http://static.toastoven.net/prod_infrastructure/monitoring/img_105.png)
+<center>[그림 4 알람 등록 설정]</center>
 
-![[그림 5 알람 등록 설정]](http://static.toastoven.net/prod_infrastructure/monitoring/img_105.png)
-<center>[그림 5 알람 등록 설정]</center>
-
-&lt;Receiver> 대화창이 팝업되면 프로젝트 멤버를 추가합니다.
-
-### Receiver 설정
+### 수신자 설정
 
 알람을 받을 프로젝트 멤버를 선택하고, 알람을 받을 방법을 선택합니다.
 
-```
-[Receiver]란에 프로젝트 멤버 이메일 입력
-[Add] 버튼 클릭
-[OK] 버튼 클릭
-```
-
-![[그림 6 Receiver 설정]](http://static.toastoven.net/prod_infrastructure/monitoring/img_106.png)
-<center>[그림 6 Receiver 설정]</center>
+![[그림 5 Receiver 설정]](http://static.toastoven.net/prod_infrastructure/monitoring/img_106.png)
+<center>[그림 5 Receiver 설정]</center>
 
 ## 알람 수정 및 삭제
 
-[Infrastructure] > [Compute & Network] > [Monitoring] > [Alarm Setting]탭에서 알람을 수정 및 삭제 할 수 있습니다.
+[Alarm Setting] 탭에서 알람을 수정 및 삭제 할 수 있습니다.
 
-![[그림 7 알람 리스트]](http://static.toastoven.net/prod_infrastructure/monitoring/img_107.png)
-<center>[그림 7 알람 리스트]</center>
+![[그림 6 알람 리스트]](http://static.toastoven.net/prod_infrastructure/monitoring/img_107.png)
+<center>[그림 6 알람 리스트]</center>
 
 알람을 수정하려면 리스트에서 수정하고자 하는 알람 설정을 클릭합니다. 알람 등록과는 다르게 한번에 하나의 알람에 대해서만 수정 가능합니다. 나머지는 알람 등록과 동일합니다.  
 등록한 알람은 필요에 따라 활성화 시키거나 비활성화 시킬 수 있습니다. 활성화 혹은 비활성화 하고자 하는 알람들을 리스트에서 선택한 후 “Enable/Disable” 버튼을 누르면 해당 알람을 활성화 혹은 비활성화 시킬 수 있습니다.  
@@ -203,6 +156,16 @@ sensu-client (pid 9223) is running...
 Starting sensu-client [ OK ]
 ```
 
-### 주의 사항
-모니터링 에이전트는 오픈소스 프로젝트인 sensu를 이용하였습니다. 따라서 사용자 인스턴스에 이미 다른 sensu 에이전트가 설치되어 있다면 TOAST Cloud의 모니터링 에이전트를 사용할 수 없습니다.  
-또한 /etc/sensu 안의 파일들을 임의로 변조하거나 삭제할 경우 정상 동작을 보장하지 않습니다.
+> [주의]
+> 모니터링 에이전트는 오픈소스 프로젝트인 sensu를 이용하였습니다. 따라서 사용자 인스턴스에 이미 다른  sensu 에이전트가 설치되어 있다면 TOAST Cloud의 모니터링 에이전트를 사용할 수 없습니다.  
+> 또한 /etc/sensu 안의 파일들을 임의로 변조하거나 삭제할 경우 정상 동작을 보장하지 않습니다.
+
+
+## 알람로그 확인
+
+[Alarm 로그] 탭에서 알람 로그 리스트를 확인 할 수 있습니다.
+
+![[그림 7 알람 로그]](http://static.toastoven.net/prod_infrastructure/monitoring/img_103.png)
+<center>[그림 7 알람 로그]</center>
+
+사용자가 등록한 임계값을 초과하여 발송한 알람 리스트를 확인 할 수 있습니다. 특정 VM에 대한 알람로그를 보고 싶으면 서버 이름 혹은 IP 주소를 입력 후 [검색] 버튼을 클릭합니다.
