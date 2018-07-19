@@ -1,94 +1,96 @@
 ## Compute > Monitoring > Console Guide
 
-## 인스턴스 상태 확인
+## Check Instance Status
 
-인스턴스 상태를 확인하려면 먼저 **Compute > Monitoring > Server Details**에서 모니터링할 인스턴스를 추가합니다.
+Go to **Compute > Monitoring > Server Details** and add an instance to monitor.
 
-**Server 이름**에서 서버를 선택하고 **추가** 버튼을 클릭하면 상세 정보를 확인할 수 있습니다. 더 이상 정보를 확인하지 않으려면 오른쪽에 있는 **삭제** 버튼을 클릭하면 됩니다. 서버 상세 정보에서 확인할 수 있는 정보는 다음과 같습니다.
+Click **Add** for the server selected at the **Server Name**, and its details are added to the below table. You can also delete servers you don't want any more, by pressing **Delete**. Following information shows in the server details:    
 
-- Server 이름: 서버 이름
-- IP: IP 주소
-- vCPU: CPU 사용량
-- 메모리: 메모리 사용량
-- Disk 읽기: 초당 읽은 디스크 바이트
-- Disk 쓰기: 초당 쓴 디스크 바이트
-- Network In: 초당 받은 네트워크 바이트
-- Network Out: 초당 전송한 네트워크 바이트
-- 상태: 서버 상태
-- 사용 시간: 서버 구동 시간
+- Server Name: Server Name
 
-서버 상태 그래프를 보려면 **Graph** 탭을 선택합니다.
+
+- IP: IP address
+- vCPU: Usage Volume of CPU
+- Memory: Usage Volume of Memory
+- Disk Read: Disk Read Byte by Second
+- Disk Write: Disk Write Byte by Second
+- Network In: Network Receive Byte by Second
+- Network Out: Network Transfer Byte by Second
+- Status: Server Status
+- Uptime: Server Operating Time  
+
+Select **Graph** to view the graph of a server status.
 
 ![[그림 2 서버 상태 그래프]](http://static.toastoven.net/prod_infrastructure/monitoring/img_102.jpg)
 
-검색 기간에 따라 그래프에 표현되는 데이터의 주기가 1분, 5분, 30분, 2시간으로 자동 변경됩니다. 더 이상 확인하고 싶지 않은 서버 그래프가 있다면 **삭제** 버튼을 클릭합니다.
+The data cycle displayed on the graph is automatically adjusted to 1 minute/5 minutes/30 minutes/2 hours, depending on the search periods. You may also click **Delete** to delete graphs of the server you don't need any more.  
 
-> [주의]  
-> 모니터링 데이터의 보관 주기는 최대 한 달입니다. 따라서 그래프의 기간은 한 달을 넘길 수 없습니다.
+> [Caution]  
+> No monitoring data can be saved more than a month; the period on a graph cannot exceed a month.
 
-## 알람로그 확인
+## Check Alarm Logs
 
-**Compute > Monitoring > Alarm Logs**에서 알람 로그 목록을 확인할 수 있습니다.
+To check the list of alarm logs, go to **Compute > Monitoring > Alarm Logs**.
 
-사용자가 등록한 임곗값을 초과하여 발송한 알람 목록을 확인할 수 있습니다. 특정 VM에 대한 알람 로그를 보고 싶다면 서버 이름 또는 IP 주소를 입력한 후 **검색** 버튼을 클릭합니다.
+Check the list of alarms sent exceeding the threshold as registered. To view alarm logs of a particular VM, enter a server name or IP address and click **Search**.
 
-## 알람 등록
+## Register Alarms
 
- **Compute > Monitoring > Alarm Setting**에서 **추가**를 클릭하면 알람을 등록할 수 있습니다.
+To register alarms, go to **Compute > Monitoring > Alarm Setting** and click **Add**. 
 
-**Alarm 추가** 창에서 알람을 등록할 서버를 추가하고 임곗값과  수신자를 지정합니다.
+Add a server to register alarms for on **Add Alarm Setting** and set metrics and specify receivers.
 
-### Server 이름 선택
+### Select Server Name
 
-알람을 등록할 서버를 검색하여 추가합니다.
+Search and add a server to register alarms.
 
-### 임곗값 선택
+### Select Metrics
 
-알람을 받을 인스턴스의 시스템 자원 및 임곗값을 설정합니다. 지원하는 메트릭(metric)에는 CPU 사용량, 메모리 사용량, 디스크 사용량, 네트워크 사용량 및 서버 상태(server status)가 있습니다. 각 메트릭(metric)의 설명 및 입력해야 하는 임곗값의 형태는 아래와 같습니다.
+Set system resources and thresholds of instances  to receive alarms for. Metrics are supported as follows: CPU, usage volume of CPU, usage volume of memory, usage volume of a disk, usage volume of network and server status. Description of each metric and the type of threshold to enter are as follows:  
 
-|파라미터|	설명|
-|---|---|
-|CPU|	CPU 사용량을 뜻합니다. 0~100(%) 중 하나의 값을 입력해야 합니다.|
-|메모리|	Memory 사용량을 뜻합니다. MB 단위의 절댓값을 입력합니다.|
-|Disk Read|	디스크 읽기 사용량을 뜻합니다. 인스턴스에 연결한 각각의 디스크에 대해서 바이트 단위의 절댓값을 입력합니다.|
-|Disk Write|	디스크 쓰기 사용량을 뜻합니다. 인스턴스에 연결한 각각의 디스크에 대해서 바이트 단위의 절댓값을 입력합니다.|
-|Network In|	받은 네트워크 사용량을 뜻합니다. 인스턴스에 연결한 각각의 이더넷 인터페이스에 대해서 바이트 단위의 절댓값을 입력합니다.|
-|Network Out|	전송한 네트워크 사용량을 뜻합니다. 인스턴스에 연결한 각각의 이더넷 인터페이스에 대해서 바이트 단위의 절댓값을 입력합니다.|
-|Server 다운|	서버의 상태를 뜻합니다. 여기서 말하는 서버의 상태는 외부와 통신이 가능한 상태를 정상으로 판단합니다. 해당 Metric은 별도의 값을 입력할 필요가 없습니다.|
+| Parameter   | Description                              |
+| ----------- | ---------------------------------------- |
+| CPU         | Usage volume of CPU: enter one between 0 and 100 (%). |
+| Memory      | Usage volume of a memory: enter an absolute value in MB. |
+| Disk Read   | Usage volume of a disk read: enter an absolute value in byte for each device associated with an instance. |
+| Disk Write  | Usage volume of a disk write: enter an absolute value in byte for each device associated with an instance. |
+| Network In  | Usage volume of received network: enter an absolute value in byte for each Ethernet interface associated with an instance. |
+| Network Out | Usage volume of transferred network: enter an absolute value in byte for each Ethernet interface associated with an instance. |
+| Server Down | Status of a server: considered normal when communication with an outside network is available. No need to enter a value for this metric. |
 
-> [주의]  
-> **Server Down**을 사용하려면 별도의 Monitoring 에이전트를 해당 인스턴스에 설치해야 하며, 해당 인스턴스는 외부와 통신이 가능한 네트워크에 연결되어 있어야 합니다.
+> [Caution]  
+> To use the **Server Down** Metric, a monitoring agent needs to be installed at the instance, which must be connected to a network communicating with outside networks.
 
-1. **Server 이름**에서 서버를 선택하고 **추가** 버튼을 클릭합니다.
-2. **+ Alarm 추가**를 클릭합니다.
-3. **계랑** 목록에서 설정할 메트릭을 선택합니다.
-4. **임곗값**에서 조건을 선택하고 임곗값을 지정합니다.
-5. 알람 수신자를 설정하기 위해 **수신자**에서 **편집** 버튼을 클릭합니다.
-6. **수신자** 대화 상자가 나타나면 프로젝트 멤버를 추가합니다.
+1. Select a server from the **Server Name** and click **Add**.
+2. Click **+ Add alarms**.
+3. Select a metric to configure in **Metric**.
+4. Select conditions in **Threshold** and specify values.
+5. Click **Edit** to set alarm receivers.
+6. In **Receiver** dialog, add a project member.  
 
-### 수신자 설정
+### Set Receivers
 
-알람을 받을 프로젝트 멤버를 선택하고, 알람을 받을 방법을 선택합니다.
+Select a project member to receive alarms and select a receiving method.
 
-**수신자** 입력 상자에 프로젝트 멤버 이메일을 입력하고 **추가** 버튼을 클릭합니다.
+Enter email of a project member at **Receiver** and click **Add**.
 
 ![[그림 6 Receiver 설정]](http://static.toastoven.net/prod_infrastructure/monitoring/img_106.png)
 
-## 알람 수정 및 삭제
+## Modify and Delete Alarms
 
-**Compute > Monitoring > Alarm Setting**에서 알람을 수정하거나 삭제할 수 있습니다.
+Go to **Compute > Monitoring > Alarm Setting** and modify or delete alarms.
 
-알람을 수정하려면 목록에서 수정하고자 하는 알람 설정을 클릭합니다. 알람 등록과는 다르게 한 번에 알람 하나만 수정할 수 있습니다. 나머지는 알람 등록과 동일합니다.  
-등록한 알람은 필요에 따라 활성화하거나 비활성화할 수 있습니다. 활성화 혹은 비활성화하고자 하는 알람을 목록에서 선택한 후 **활성/비활성** 버튼을 클릭하면 해당 알람을 활성화 혹은 비활성화할 수 있습니다.
-등록한 알람이 더 이상 필요 없을 때에는 **삭제** 버튼을 클릭해 해당 알람을 삭제할 수 있습니다.
+To modify alarms, click an alarm setting to modify on the list. Modification is available only for an alarm, unlike registration. The rest of the process is the same with alarm registration.
+Registered alarms may be activated or deactivated, depending on the needs: select alarms to active/deactivate and click **Enable/Disable**.
+You may also delete alarms when they are not needed any longer, by pressing **Delete**.
 
-## 모니터링 에이전트 설치
+## Install Monitoring Agents
 
-모니터링 에이전트는 Server Down Metric을 사용할 때만 필요합니다.
+Monitoring agent is required only when Server Down Metric is used.
 
-### 에이전트 다운로드
+### Download Agents
 
-[TOAST Downloads](https://docs.toast.com/en/Download/) 페이지의 **Compute > Monitoring**에서 **Agent** 파일을 다운로드합니다.
+Download **Agent** files of the **Compute > Monitoring** on [TOAST Download](https://docs.toast.com/en/Download/).
 
 ```
 [root@host-192-168-0-7 ~]# wget http://static.toastoven.net/toastcloud/sdk_download/monitor/tcc/agent-centos-0.0.2.tgz
@@ -104,9 +106,9 @@ Saving to: “agent-centos-0.0.2.tgz”
 2014-09-17 11:35:31 (35.6 MB/s) - “agent-centos-0.0.2.tgz” saved [168329/168329]
 ```
 
-### 에이전트 설치
+### Install Agents
 
-모니터링 에이전트는 반드시 루트(root) 권한으로 설치해야 합니다. 설치하려면 다운로드한 파일을 압축 해제한 후, 'install.sh'를 실행하면 됩니다.
+Must install a monitoring agent with the root certificate. To install, decompress downloaded files, and execute 'nstall.sh'.  
 
 ```
 [root@host-192-168-0-7 ~]# tar -zxvf agent-centos-0.0.2.tgz
@@ -138,22 +140,22 @@ Saving to: “agent-centos-0.0.2.tgz”
 [root@host-192-168-0-7 ~]# sh agent/install.sh
 ```
 
-### 에이전트 상태 확인
+### Check Agent Status
 
-'service sensu-client status' 명령어를 입력하여 아래와 같이 'is running'으로 나온다면 정상적으로 동작하고 있는 것입니다.
+It works normally if the “service sensu-client status” commands results in “is running”.
 
 ```
 [root@host-192-168-0-7 ~]# /etc/init.d/sensu-client status
 sensu-client (pid 9223) is running...
 ```
 
-만약 위 상태가 아닐 경우 'service sensu-client start' 명령어를 이용해 수동으로 시작할 수 있습니다.
+If the status is not like the above, you can manually begin with the “service sensu-client start” command.
 
 ```
 [root@host-192-168-0-7 ~]# /etc/init.d/sensu-client start
 Starting sensu-client [ OK ]
 ```
 
-### 주의 사항
-모니터링 에이전트는 오픈 소스 프로젝트인 sensu를 이용했습니다. 따라서 사용자 인스턴스에 이미 다른 sensu 에이전트가 설치되어 있다면 TOAST의 모니터링 에이전트를 사용할 수 없습니다.  
-또한 /etc/sensu 안의 파일들을 임의로 변조하거나 삭제할 경우 제대로 동작하지 않을 수도 있습니다.
+### Caution
+Monitoring agent uses sensu, which is an open-source project; therefore, if another sensu agent is already installed at a user instance, the TOAST Cloud monitoring agent cannot be applied.   
+In addition, if there is any fabrication or deletion of files within /etc/sensu, normal operations may not be ensured.
