@@ -1,11 +1,13 @@
 ## Compute > Monitoring > Overview
 
-Infrastructure 서비스에서는 사용자가 생성한 인스턴스에 대한 모니터링 기능을 기본으로 제공합니다.
-인스턴스의 하드웨어 리소스 사용량을 볼 수 있으며, 사용량에 임곗값을 설정하여 특정 상황에 대한 알람을 이메일 또는 SMS로 받아볼 수 있습니다.
+The infrastructure service provides monitoring for instances created by a user.  
+You can find hardware resource usage volume of an instance or set a threshold to receive alarms for specific conditions via email or SMS. 
 
-다음은 TOAST 모니터링 시스템 구성은 다음 그림과 같습니다
+TOAST Monitoring System is configured as below.
+
+### Configuration of Monitoring System 
 
 ![[모니터링 시스템 구성]](http://static.toastoven.net/toastcloud/static/common/img/cms_img/monitoring/img_1.jpg)
 
-모니터링 시스템은 OpenStack의 Ceilometer를 기반으로 확장한 시스템입니다.
-기본적으로 하이퍼바이저(hypervisor)를 통해 사용자가 생성한 인스턴스의 리소스 사용량 정보를 얻기 때문에 모니터링을 위한 별도의 프로그램을 설치할 필요가 없습니다. 특수한 모니터링 항목을 확인하려면(예: 서버의 다운 여부) 모니터링 에이전트를 서버에 직접 설치해야 합니다.
+The monitoring system is a scaled system on the back of Ceilometer of OpenStack.  
+As information on resource use of instances created by a user comes from Hypervisor, there is no need to install a monitoring program. To check monitoring items with specific purposes (e.g. whether server has been down), a monitoring agent is required at a server. 
