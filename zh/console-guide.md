@@ -135,7 +135,8 @@ Saving to: “agent-centos-0.0.2.tgz”
 ./agent/plugins/
 ./agent/plugins/vm_checks_update.rb
 ./agent/plugins/VERSION
-[root@host-192-168-0-7 ~]# sh agent/install.sh
+[root@host-192-168-0-7 ~]# cd agent
+[root@host-192-168-0-7 ~]# sh install.sh
 ```
 
 ### 代理程序状态确认

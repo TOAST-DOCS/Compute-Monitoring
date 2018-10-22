@@ -137,7 +137,8 @@ Must install a monitoring agent with the root certificate. To install, decompres
 ./agent/plugins/
 ./agent/plugins/vm_checks_update.rb
 ./agent/plugins/VERSION
-[root@host-192-168-0-7 ~]# sh agent/install.sh
+[root@host-192-168-0-7 ~]# cd agent
+[root@host-192-168-0-7 ~]# sh install.sh
 ```
 
 ### Check Agent Status
