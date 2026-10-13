@@ -90,7 +90,7 @@ Monitoring agent is required only when Server Down Metric is used.
 
 ### Download Agents
 
-Download **Agent** files of the **Compute > Monitoring** on [TOAST Download](https://docs.toast.com/en/Download/).
+Download **Agent** files of the **Compute > Monitoring** on [TOAST Download](https://docs.nhncloud.com/en/Download/).
 
 ```
 [root@host-192-168-0-7 ~]# wget http://static.toastoven.net/toastcloud/sdk_download/monitor/tcc/agent-centos-0.0.2.tgz

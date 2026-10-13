@@ -88,7 +88,7 @@
 
 ### エージェントのダウンロード
 
-[TOAST Downloads](https：//docs.toast.com/en/Download/)ページの**Compute > Monitoring**で**Agent** ファイルをダウンロードします。
+[TOAST Downloads](https：//docs.nhncloud.com/en/Download/)ページの**Compute > Monitoring**で**Agent** ファイルをダウンロードします。
 
 ```
 [root@host-192-168-0-7 ~]# wget http：//static.toastoven.net/toastcloud/sdk_download/monitor/tcc/agent-centos-0.0.2.tgz

@@ -86,7 +86,7 @@
 
 ### 에이전트 다운로드
 
-[TOAST Downloads](https://docs.toast.com/en/Download/) 페이지의 **Compute > Monitoring**에서 **Agent** 파일을 다운로드합니다.
+[TOAST Downloads](https://docs.nhncloud.com/en/Download/) 페이지의 **Compute > Monitoring**에서 **Agent** 파일을 다운로드합니다.
 
 ```
 [root@host-192-168-0-7 ~]# wget http://static.toastoven.net/toastcloud/sdk_download/monitor/tcc/agent-centos-0.0.2.tgz
